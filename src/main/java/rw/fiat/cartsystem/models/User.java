@@ -5,13 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-import rw.pacis.ne.auth_boilerplate.enums.EGender;
-import rw.pacis.ne.auth_boilerplate.enums.ERole;
+import rw.fiat.cartsystem.enums.EGender;
+import rw.fiat.cartsystem.enums.ERole;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 
@@ -22,7 +19,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = {"email"}), @UniqueConstraint(columnNames = {"phone_number"})})
-@OnDelete(action = OnDeleteAction.CASCADE)
+//@OnDelete(action = OnDeleteAction.CASCADE)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -53,7 +50,7 @@ public class User {
     private ERole role = ERole.STANDARD;
 
     @JsonIgnore
-    @NotBlank
+//    @NotBlank
     @Column(name = "password")
     private String password;
 
@@ -95,5 +92,8 @@ public class User {
 
     public String getFullName() {
         return this.firstName + " " + this.lastName;
+    }
+
+    public void setRole(ERole standard) {
     }
 }

@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.security;
+package rw.fiat.cartsystem.security;
 
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
@@ -8,8 +8,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
-import rw.pacis.ne.auth_boilerplate.models.User;
-import rw.pacis.ne.auth_boilerplate.utils.Mapper;
+import rw.fiat.cartsystem.models.User;
+import rw.fiat.cartsystem.utils.Mapper;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -26,7 +26,7 @@ public class JwtTokenProvider {
     private int jwtExpirationInMs;
 
     public String generateToken(Authentication authentication) {
-        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+        rw.fiat.cartsystemsecurity.UserPrincipal userPrincipal = (rw.fiat.cartsystemsecurity.UserPrincipal) authentication.getPrincipal();
 
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);

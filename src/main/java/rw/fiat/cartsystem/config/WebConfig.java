@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.config;
+package rw.fiat.cartsystem.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

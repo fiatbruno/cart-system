@@ -1,12 +1,12 @@
-package rw.pacis.ne.auth_boilerplate.dtos;
+package rw.fiat.cartsystem.dtos;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import rw.pacis.ne.auth_boilerplate.enums.EGender;
-import rw.pacis.ne.auth_boilerplate.security.ValidPassword;
+import rw.fiat.cartsystem.enums.EGender;
+import rw.fiat.cartsystem.security.ValidPassword;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

@@ -1,6 +1,6 @@
-package rw.pacis.ne.auth_boilerplate.services;
+package rw.fiat.cartsystem.services;
 
-import rw.pacis.ne.auth_boilerplate.models.User;
+import rw.fiat.cartsystem.models.User;
 
 
 public interface IUserService {

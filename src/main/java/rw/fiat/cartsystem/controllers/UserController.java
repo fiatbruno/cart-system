@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.controllers;
+package rw.fiat.cartsystem.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -6,11 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import rw.pacis.ne.auth_boilerplate.dtos.SignUpDTO;
-import rw.pacis.ne.auth_boilerplate.enums.ERole;
-import rw.pacis.ne.auth_boilerplate.models.User;
-import rw.pacis.ne.auth_boilerplate.payload.ApiResponse;
-import rw.pacis.ne.auth_boilerplate.services.IUserService;
+import rw.fiat.cartsystem.dtos.SignUpDTO;
+import rw.fiat.cartsystem.enums.ERole;
+import rw.fiat.cartsystem.models.User;
+import rw.fiat.cartsystem.payload.ApiResponse;
+import rw.fiat.cartsystem.services.IUserService;
 
 import javax.validation.Valid;
 

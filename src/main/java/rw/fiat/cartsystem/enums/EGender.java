@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.enums;
+package rw.fiat.cartsystem.enums;
 
 public enum EGender {
     MALE, FEMALE, OTHERS

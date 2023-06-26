@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.security;
+package rw.fiat.cartsystem.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

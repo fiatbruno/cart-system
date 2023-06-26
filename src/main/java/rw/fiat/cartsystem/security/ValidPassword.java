@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.security;
+package rw.fiat.cartsystem.security;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

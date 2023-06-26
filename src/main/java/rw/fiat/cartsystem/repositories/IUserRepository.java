@@ -1,8 +1,8 @@
-package rw.pacis.ne.auth_boilerplate.repositories;
+package rw.fiat.cartsystem.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import rw.pacis.ne.auth_boilerplate.models.User;
+import rw.fiat.cartsystem.models.User;
 
 import java.util.Optional;
 import java.util.UUID;

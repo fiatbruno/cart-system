@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.exceptions;
+package rw.fiat.cartsystem.exceptions;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.ResponseEntity;
@@ -6,7 +6,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import rw.pacis.ne.auth_boilerplate.payload.ErrorResponse;
+import rw.fiat.cartsystem.payload.ErrorResponse;
 
 import java.util.Objects;
 

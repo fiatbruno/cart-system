@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.config;
+package rw.fiat.cartsystem.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,9 +12,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import rw.pacis.ne.auth_boilerplate.security.CustomUserDetailsService;
-import rw.pacis.ne.auth_boilerplate.security.JwtAuthenticationEntryPoint;
-import rw.pacis.ne.auth_boilerplate.security.JwtAuthenticationFilter;
+import rw.fiat.cartsystem.security.CustomUserDetailsService;
+import rw.fiat.cartsystem.security.JwtAuthenticationEntryPoint;
+import rw.fiat.cartsystem.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity

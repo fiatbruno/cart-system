@@ -1,13 +1,13 @@
-package rw.pacis.ne.auth_boilerplate.security;
+package rw.fiat.cartsystem.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import rw.pacis.ne.auth_boilerplate.exceptions.BadRequestException;
-import rw.pacis.ne.auth_boilerplate.models.User;
-import rw.pacis.ne.auth_boilerplate.repositories.IUserRepository;
+import rw.fiat.cartsystem.exceptions.BadRequestException;
+import rw.fiat.cartsystem.models.User;
+import rw.fiat.cartsystem.repositories.IUserRepository;
 
 import javax.transaction.Transactional;
 import java.util.UUID;
@@ -24,13 +24,13 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Transactional
     public UserDetails loadByUserId(UUID id) {
         User user = this.userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not found with id: " + id));
-        return UserPrincipal.create(user);
+        return rw.fiat.cartsystemsecurity.UserPrincipal.create(user);
     }
 
     @Transactional
     public UserDetails loadUserByUsername(String s) throws BadRequestException {
         User user = userRepository.findByEmailOrPhoneNumber(s, s).orElseThrow(() -> new UsernameNotFoundException("user not found with email or mobile of " + s));
 
-        return UserPrincipal.create(user);
+        return rw.fiat.cartsystemsecurity.UserPrincipal.create(user);
     }
 }

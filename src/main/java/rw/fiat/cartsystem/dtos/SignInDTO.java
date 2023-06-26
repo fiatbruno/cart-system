@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.dtos;
+package rw.fiat.cartsystem.dtos;
 
 
 import lombok.Data;

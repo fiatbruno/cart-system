@@ -1,7 +1,7 @@
-package rw.pacis.ne.auth_boilerplate.utils;
+package rw.fiat.cartsystem.utils;
 
 import org.modelmapper.ModelMapper;
-import rw.pacis.ne.auth_boilerplate.models.User;
+import rw.fiat.cartsystem.models.User;
 
 public class Mapper {
 

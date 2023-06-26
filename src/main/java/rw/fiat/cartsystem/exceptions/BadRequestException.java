@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.exceptions;
+package rw.fiat.cartsystem.exceptions;
 
 
 import org.springframework.http.HttpStatus;

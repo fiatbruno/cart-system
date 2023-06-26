@@ -1,16 +1,16 @@
-package rw.pacis.ne.auth_boilerplate.serviceImpls;
+package rw.fiat.cartsystem.serviceImpls;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-import rw.pacis.ne.auth_boilerplate.exceptions.BadRequestException;
-import rw.pacis.ne.auth_boilerplate.exceptions.ResourceNotFoundException;
-import rw.pacis.ne.auth_boilerplate.models.User;
-import rw.pacis.ne.auth_boilerplate.repositories.IUserRepository;
-import rw.pacis.ne.auth_boilerplate.services.IUserService;
+import rw.fiat.cartsystem.exceptions.BadRequestException;
+import rw.fiat.cartsystem.exceptions.ResourceNotFoundException;
+import rw.fiat.cartsystem.models.User;
+import rw.fiat.cartsystem.repositories.IUserRepository;
+import rw.fiat.cartsystem.services.IUserService;
 
-import java.util.*;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements IUserService {

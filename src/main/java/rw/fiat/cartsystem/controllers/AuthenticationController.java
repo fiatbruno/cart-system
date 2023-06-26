@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.controllers;
+package rw.fiat.cartsystem.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,10 +7,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import rw.pacis.ne.auth_boilerplate.dtos.SignInDTO;
-import rw.pacis.ne.auth_boilerplate.payload.ApiResponse;
-import rw.pacis.ne.auth_boilerplate.payload.JWTAuthenticationResponse;
-import rw.pacis.ne.auth_boilerplate.security.JwtTokenProvider;
+import rw.fiat.cartsystem.dtos.SignInDTO;
+import rw.fiat.cartsystem.payload.ApiResponse;
+import rw.fiat.cartsystem.payload.JWTAuthenticationResponse;
+import rw.fiat.cartsystem.security.JwtTokenProvider;
 
 import javax.validation.Valid;
 

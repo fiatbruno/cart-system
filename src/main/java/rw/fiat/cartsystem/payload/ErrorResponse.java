@@ -1,4 +1,4 @@
-package rw.pacis.ne.auth_boilerplate.payload;
+package rw.fiat.cartsystem.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

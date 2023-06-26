@@ -1,5 +1,6 @@
-package rw.pacis.ne.auth_boilerplate.config;
+package rw.fiat.cartsystem.config;
 
+import com.google.common.base.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -8,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -86,8 +88,8 @@ public class SwaggerApiDoc extends WebMvcConfigurationSupport {
                     public String getApplicationBasePath() {
                         return "";
                     }
-                }).select().apis(RequestHandlerSelectors.basePackage(baseControllerPath))
-                .paths(PathSelectors.any()).build().apiInfo(apiInfo()).securitySchemes(Arrays.asList(apiKey()))
+                }).select().apis((Predicate<RequestHandler>) RequestHandlerSelectors.basePackage(baseControllerPath))
+                .paths((Predicate<String>) PathSelectors.any()).build().apiInfo(apiInfo()).securitySchemes(Arrays.asList(apiKey()))
                 .securityContexts(Collections.singletonList(securityContext()));
     }
 
