@@ -1,63 +1,41 @@
 package rw.fiat.cartsystem.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.Date;
+import java.util.UUID;
+
+@Getter
+@Setter
 @Entity
-@Table(name = "Product")
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "products")
 public class Product {
     @Id
-    private int code;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "code")
+    private UUID code;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "product_type")
     private String productType;
+
+    @Column(name = "price")
     private double price;
-    private LocalDate indate;
-    private String image;
 
-    public Product() {
+    @Column(name = "in_date")
+    private Date inDate;
+
+    public void setQuantity(int quantity) {
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public LocalDate getIndate() {
-        return indate;
-    }
-
-    public void setIndate(LocalDate indate) {
-        this.indate = indate;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    // Constructors, getters, and setters
+    // Add relationships and additional attributes as needed
 }

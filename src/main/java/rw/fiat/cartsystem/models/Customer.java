@@ -1,51 +1,47 @@
 package rw.fiat.cartsystem.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.UUID;
+
+@Getter
+@Setter
 @Entity
-@Table(name = "Customer")
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "customers")
 public class Customer {
+
     @Id
-    private int id;
-    private String firstname;
-    private String phone;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private UUID id;
+
+    @Column(name = "firstname")
+    private String firstName;
+
+    @Column(name = "phone")
+    private String phoneNumber;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
     private String password;
 
-    public Customer() {
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
+    public Customer(String firstName, String email, String phoneNumber, String password) {
+        this.firstName = firstName;
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
+        this.phoneNumber = phoneNumber;
         this.password = password;
     }
+
+    public String getName() {
+        return firstName;
+    }
+
 }

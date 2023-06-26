@@ -1,60 +1,39 @@
 package rw.fiat.cartsystem.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.Date;
+import java.util.UUID;
+
+@Getter
+@Setter
 @Entity
-@Table(name = "Purchased")
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "purchased")
 public class Purchased {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private UUID id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_code")
     private Product product;
 
-    private int quantity;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "quantity")
+    private Quantity quantity;
+
+    @Column(name = "total")
     private double total;
-    private LocalDate date;
 
-    public Purchased() {
-    }
+    @Column(name = "date")
+    private Date date;
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
+    // Add relationships and additional attributes as needed
 }
